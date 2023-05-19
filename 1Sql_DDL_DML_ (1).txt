@@ -1,0 +1,185 @@
+DDL
+---
+CREATE 
+ALTER
+RENAME
+DROP 
+TRUNCATE 
+
+CARDT
+
+
+=>CREATE
+Create a new table,database,schema(user)
+
+Example:
+
+create table emp1
+(
+ id number(2),  
+name varchar2(30),
+salary number(10),
+deptno number(3) 
+);
+ 
+
+
+
+=>ALTER
+Alter existing table,column description
+
+1.Adding New Columns
+   ALTER TABLE emp8 ADD city varchar2(10);
+  
+2.Modifying existing columns
+  Ex: ALTER TABLE emp1 MODIFY city varchar2(20);  
+
+3.Dropping a columns
+  Ex:ALTER TABLE emp1 DROP COLUMN city;  
+
+
+
+
+
+=>RENAME
+   *used to change the name of a table or column name
+
+SYNTEX:  Rename old_table_name to new_table_name;
+   Ex: Rename emp1 to emp8;
+
+ALTER TABLE table_name RENAME TO new_table_name;
+
+   Ex: ALTER TABLE emp8 RENAME TO emp11;
+
+alter table table_name rename column old_column_name to new_column_name
+
+  ex: alter table emp rename column emp_id to id;
+
+
+
+
+
+=>DROP
+Delete existing object from database.
+
+Example:
+drop table emp1;
+
+
+
+
+
+
+=>TRUNCATE
+----------
+A truncate SQL statement is used to remove all rows 
+(complete data) from a table. It is similar to the DELETE 
+statement with no WHERE clause.
+
+Example:
+TRUNCATE TABLE Emp1;
+
+
+
+
+
+
+
+
+
+DML
+---
+=>SELECT
+SELECT statement is used to retrieve records from one or more 
+tables in an Oracle database.
+
+Example:
+ a.Select all fields from one table
+   select * from emp1;
+
+ b.Select individual fields from one table
+   select name,salary from emp1;
+
+ c.Select fields from multiple tables
+    SELECT e1.name ,e2.salary
+      FROM emp1 e1
+      INNER JOIN emp8 e2
+      ON e1 emp_id=e2.id; 
+-----------------------------------------------------------------
+=>INSERT
+SQL INSERT statement is a SQL query. It is used 
+to insert a single or a multiple records in a table.
+
+	1.Insert into values:
+ There are different ways to insert values in a table.
+
+  In the first method there is no need to specify the column name
+  where the data will be inserted, you need only their values.
+
+Example:
+insert into emp1 values(10,'tamil',3000,40);
+insert into emp1 values(14,'veena',5000,70);
+  
+2.The second method specifies both the column name and 
+  values which you want to insert.
+
+Example:
+ insert into emp1(emp_id,name,deptno) values(12,'anbu',60);
+ 
+3.INSERT INTO SELECT
+
+Example:
+INSERT INTO emp1(emp_id,name,salary,deptno)  
+SELECT 
+id, 
+name,
+salary,
+dept_no  
+FROM emp8;   
+
+4.INSERT ALL:
+    The Oracle INSERT ALL statement is used to add multiple rows
+ with a single INSERT statement.
+ Example:
+
+  INSERT ALL
+  INTO emp1 (emp_id,name,salary,deptno) VALUES (101,'tamil',3000,40)
+  INTO emp1 (emp_id,name,salary,deptno) VALUES (102,'selvan',4000,50)
+  INTO emp1 (emp_id,name,salary,deptno) VALUES (103,'Tamilselvan',5000,60)
+SELECT * FROM dual;   
+------------------------------------------------------------------
+
+=>UPDATE
+The Oracle UPDATE statement is used to update existing records 
+in a Oracle database table.
+
+Example:
+1.Update single column
+ UPDATE emp1
+   SET name = 'tamil'
+WHERE id = 101;
+ 
+2.Update multiple columns
+
+UPDATE emp1
+    SET name = 'tamil',
+        city='chennai'
+WHERE id=101;
+
+
+
+------------------------------------------------------------------
+=>DELETE
+The DELETE statement is used to delete rows from a table. 
+If you want to remove a specific row from a table you should 
+use WHERE condition.
+
+Ex:
+DELETE FROM table_name;
+delete from emp1;
+
+DELETE FROM table_name [WHERE condition]; 
+
+delete from emp1 where emp_id=201; 
+------------------------------------------------------------------
+
