@@ -1,12 +1,13 @@
 DDL
 ---
-CREATE sample
+CREATE 
 ALTER
 RENAME
 DROP 
 TRUNCATE 
 
 newv line---
+with std table
 
 CARDT
 
