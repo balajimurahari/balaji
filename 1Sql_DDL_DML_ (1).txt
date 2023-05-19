@@ -6,6 +6,8 @@ RENAME
 DROP 
 TRUNCATE 
 
+newv line---
+
 CARDT
 
 
