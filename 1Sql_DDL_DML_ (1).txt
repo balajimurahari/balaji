@@ -1,6 +1,6 @@
 DDL
 ---
-CREATE 
+CREATE sample
 ALTER
 RENAME
 DROP 
