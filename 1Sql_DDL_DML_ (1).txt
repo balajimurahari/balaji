@@ -6,9 +6,6 @@ RENAME
 DROP 
 TRUNCATE 
 
-newv line---
-with std table
-
 CARDT
 
 
